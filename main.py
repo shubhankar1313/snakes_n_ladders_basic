@@ -1,3 +1,6 @@
+from colorama import init, Fore, Style
+init(convert = True)
+
 def print_board(board):
     print('-' * 82)
     for row in board:
@@ -5,16 +8,16 @@ def print_board(board):
         print('-' * 82)
 
 def board(change = None):
-    board = [['  100   ', '99 (L8)', '  98   ', '97 (S1)', '  96   ', '95 (S2)', '  94   ', '  93   ', '92 (L7)', '  91   '],
-             ['   81   ', '  82   ', '  83   ', '  84   ', '  85   ', '  86   ', '  87   ', '88 (S3)', '  89   ', '  90   '],
-             [' 80 (L8)', '  79   ', '78 (S1)', '  77   ', '76 (L5)', '  75   ', '  74   ', '  73   ', '  72   ', '71 (L7)'],
-             ['   61   ', '62 (S4)', '  63   ', '  64   ', '  65   ', '  66   ', '67 (L6)', '  68   ', '  69   ', '  70   '],
-             ['   60   ', '  59   ', '  58   ', '  57   ', '56 (S2)', '  55   ', '  54   ', '  53   ', '  52   ', '  51   '],
-             ['   41   ', '42 (L4)', '  43   ', '  44   ', '  45   ', '  46   ', '  47   ', '48 (S5)', '  49   ', '50 (L6)'],
-             ['   40   ', '  39   ', '38 (L1)', '  37   ', '36 (S6)', '  35   ', '  34   ', '  33   ', '32 (S7)', '  31   '],
-             [' 21 (L4)', '  22   ', '  23   ', '24 (S3)', '  25   ', '26 (S5)', '  27   ', '28 (L5)', '  29   ', '30 (L3)'],
-             ['   20   ', '  19   ', '18 (S4)', '  17   ', '  16   ', '  15   ', '14 (L2)', '  13   ', '  12   ', '  11   '],
-             ['  1 (L1)', '   2   ', '   3   ', ' 4 (L2)', '   5   ', ' 6 (S6)', '   7   ', ' 8 (L3)', '   9   ', '10 (S7)']]
+    board = [['  100   ', '99 ' + Fore.BLUE + '(L8)' + Fore.WHITE, '  98   ', '97 ' + Fore.MAGENTA + '(S1)' + Fore.WHITE, '  96   ', '95 ' + Fore.MAGENTA + '(S2)' + Fore.WHITE, '  94   ', '  93   ', '92 ' + Fore.BLUE + '(L7)' + Fore.WHITE, '  91   '],
+             ['   81   ', '  82   ', '  83   ', '  84   ', '  85   ', '  86   ', '  87   ', '88 ' + Fore.MAGENTA + '(S3)' + Fore.WHITE, '  89   ', '  90   '],
+             [' 80 ' + Fore.BLUE + '(L8)' + Fore.WHITE, '  79   ', '78 ' + Fore.MAGENTA + '(S1)' + Fore.WHITE, '  77   ', '76 ' + Fore.BLUE + '(L5)' + Fore.WHITE, '  75   ', '  74   ', '  73   ', '  72   ', '71 ' + Fore.BLUE + '(L7)' + Fore.WHITE],
+             ['   61   ', '62 ' + Fore.MAGENTA + '(S4)' + Fore.WHITE, '  63   ', '  64   ', '  65   ', '  66   ', '67 ' + Fore.BLUE + '(L6)' + Fore.WHITE, '  68   ', '  69   ', '  70   '],
+             ['   60   ', '  59   ', '  58   ', '  57   ', '56 ' + Fore.MAGENTA + '(S2)' + Fore.WHITE, '  55   ', '  54   ', '  53   ', '  52   ', '  51   '],
+             ['   41   ', '42 ' + Fore.BLUE + '(L4)' + Fore.WHITE, '  43   ', '  44   ', '  45   ', '  46   ', '  47   ', '48 ' + Fore.MAGENTA + '(S5)' + Fore.WHITE, '  49   ', '50 ' + Fore.BLUE + '(L6)' + Fore.WHITE],
+             ['   40   ', '  39   ', '38 ' + Fore.BLUE + '(L1)' + Fore.WHITE, '  37   ', '36 ' + Fore.MAGENTA + '(S6)' + Fore.WHITE, '  35   ', '  34   ', '  33   ', '32 ' + Fore.MAGENTA + '(S7)' + Fore.WHITE, '  31   '],
+             [' 21 ' + Fore.BLUE + '(L4)' + Fore.WHITE, '  22   ', '  23   ', '24 ' + Fore.MAGENTA + '(S3)' + Fore.WHITE, '  25   ', '26 ' + Fore.MAGENTA + '(S5)' + Fore.WHITE, '  27   ', '28 ' + Fore.BLUE + '(L5)' + Fore.WHITE, '  29   ', '30 ' + Fore.BLUE + '(L3)' + Fore.WHITE],
+             ['   20   ', '  19   ', '18 ' + Fore.MAGENTA + '(S4)' + Fore.WHITE, '  17   ', '  16   ', '  15   ', '14 ' + Fore.BLUE + '(L2)' + Fore.WHITE, '  13   ', '  12   ', '  11   '],
+             ['  1 ' + Fore.BLUE + '(L1)' + Fore.WHITE, '   2   ', '   3   ', ' 4 ' + Fore.BLUE + '(L2)' + Fore.WHITE, '   5   ', ' 6 ' + Fore.MAGENTA + '(S6)' + Fore.WHITE, '   7   ', ' 8 ' + Fore.BLUE + '(L3)' + Fore.WHITE, '   9   ', '10 ' + Fore.MAGENTA + '(S7)' + Fore.WHITE]]
     
     print_board(board)
     
@@ -23,7 +26,7 @@ def main():
     
     board()
     
-    print(f"\nPlayer 1 Pos: {pointer1}\nPlayer 2 Pos: {pointer2}")
+    print('\n' + Fore.RED + "Player 1" + Fore.WHITE + f" Pos: {pointer1}\n" + Fore.GREEN + "Player 2" + Fore.WHITE + f" Pos: {pointer2}")
     
     choice = input(f"\nPlayer {turn} Press {button} to Roll the Dice: ")
     
