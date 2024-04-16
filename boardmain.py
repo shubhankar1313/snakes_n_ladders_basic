@@ -42,7 +42,7 @@ def print_board(board):
         print('-' * 82)
 
 def board_func(change = None):
-    global board
+    global board, turn
 
     board = [['  100   ', '99 ' + Fore.BLUE + '(L8)' + Fore.WHITE, '  98   ', '97 ' + Fore.MAGENTA + '(S1)' + Fore.WHITE, '  96   ', '95 ' + Fore.MAGENTA + '(S2)' + Fore.WHITE, '  94   ', '  93   ', '92 ' + Fore.BLUE + '(L7)' + Fore.WHITE, '  91   '],
              ['   81   ', '  82   ', '  83   ', '  84   ', '  85   ', '  86   ', '  87   ', '88 ' + Fore.MAGENTA + '(S3)' + Fore.WHITE, '  89   ', '  90   '],
@@ -60,8 +60,14 @@ def board_func(change = None):
         curr = coordinate_of_element(change[0])
         curr_element = board[curr[0]][curr[1]]
         if element_is_normal(curr_element):
-            curr_element += '*'
-            board[coordinate_of_element(change[1])[0]][coordinate_of_element(change[1])[1]] = curr_element
+
+            if turn == 1:
+                if '(' in curr_element
+                curr_element += (Fore.RED + '⬤' + Fore.WHITE)
+            else:
+                curr_element += (Fore.GREEN + '⬤' + Fore.WHITE)
+            
+            board[coordinate_of_element(change[0])[0]][coordinate_of_element(change[0])[1]] = curr_element
     
     print_board(board)
     
